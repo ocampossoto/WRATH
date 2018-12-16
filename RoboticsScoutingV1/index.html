@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--<script src="app/app.js"></script>-->
+    <!--<script src="app/controlelrs/demoController.js"></script>-->
+
+
+</head>
+<body>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        First Name: <input type="text" ng-model="firstName"><br>
+        Last Name: <input type="text" ng-model="lastName"><br>
+        <br>
+        Full Name: {{firstName + " " + lastName}}
+
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.firstName = "John";
+            $scope.lastName = "Doe";
+        });
+
+    </script>
+    <!--<hr />-->
+    <footer>
+        <p> 2018 - Team 1847 W.R.A.T.H</p>
+    </footer>
+
+
+
+</body>
+</html>
