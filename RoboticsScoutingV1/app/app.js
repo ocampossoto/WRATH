@@ -11,6 +11,9 @@ app.config(function ($routeProvider) {
         })
         .when("/contact", {
             templateUrl: "contact.html"
+        })
+        .when("/scouting", {
+            templateUrl: "scouting.html"
         });
 });
 
