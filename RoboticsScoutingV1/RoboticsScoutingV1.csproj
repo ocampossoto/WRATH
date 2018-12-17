@@ -75,6 +75,7 @@
     <Content Include="contact.html" />
     <Content Include="home.html" />
     <Content Include="index.html" />
+    <Content Include="scouting.html" />
     <Content Include="style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
