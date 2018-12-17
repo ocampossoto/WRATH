@@ -67,10 +67,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="about.html" />
     <Content Include="app\app.js" />
-    <Content Include="app\controlelrs\demoController.js" />
+    <Content Include="app\controlelrs\MainController.js" />
+    <Content Include="bootstrap-theme.css" />
+    <Content Include="bootstrap.css" />
+    <Content Include="contact.html" />
+    <Content Include="home.html" />
     <Content Include="index.html" />
-    <Content Include="navbar.html" />
+    <Content Include="style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
