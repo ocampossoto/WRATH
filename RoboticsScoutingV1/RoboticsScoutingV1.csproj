@@ -69,7 +69,9 @@
   <ItemGroup>
     <Content Include="about.html" />
     <Content Include="app\app.js" />
-    <Content Include="app\controlelrs\MainController.js" />
+    <Content Include="app\controllers\MainController.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="bootstrap-theme.css" />
     <Content Include="bootstrap.css" />
     <Content Include="contact.html" />
