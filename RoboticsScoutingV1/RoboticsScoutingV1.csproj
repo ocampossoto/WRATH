@@ -74,6 +74,7 @@
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="images\Robotics_logo.png" />
     <Content Include="js\angular-route.js" />
     <Content Include="js\angular.min.js" />
     <Content Include="js\bootstrap.bundle.js" />
