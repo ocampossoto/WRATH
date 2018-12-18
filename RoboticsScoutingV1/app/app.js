@@ -4,13 +4,21 @@
 app.config(function ($routeProvider) {
     $routeProvider
         .when("/", {
-            templateUrl: "home.html"
+            templateUrl: "/pages/home.html"
         })
         .when("/about", {
-            templateUrl: "about.html"
+            templateUrl: "/pages/about.html"
         })
         .when("/contact", {
-            templateUrl: "contact.html"
+            templateUrl: "/pages/contact.html"
+        })
+        .when("/scouting", {
+            templateUrl: "/pages/scouting.html"
         });
+});
+
+app.controller('myCtrl', function ($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
 });
 

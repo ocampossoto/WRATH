@@ -67,15 +67,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="about.html" />
+    <Content Include="images\Robotics_logo.png" />
+    <Content Include="pages\about.html" />
     <Content Include="app\app.js" />
-    <Content Include="app\controlelrs\MainController.js" />
-    <Content Include="bootstrap-theme.css" />
-    <Content Include="bootstrap.css" />
-    <Content Include="contact.html" />
-    <Content Include="home.html" />
+    <Content Include="app\controllers\MainController.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pages\contact.html" />
+    <Content Include="pages\home.html" />
     <Content Include="index.html" />
-    <Content Include="style.css" />
+    <Content Include="pages\scouting.html" />
+    <Content Include="css\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
