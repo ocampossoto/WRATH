@@ -2,6 +2,10 @@
 }
 .navBardemoBasicUsage md-content .ext-content {
     padding: 50px;
-    margin: 20px;
+    margin: 50px;
     background-color: #FFF2E0;
+}
+header {
+  padding: 30px;
+  background-image: url("Robotics_logo.png")
 }
