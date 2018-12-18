@@ -7,13 +7,13 @@ app.config(function ($routeProvider) {
             templateUrl: "home.html"
         })
         .when("/about", {
-            templateUrl: "about.html"
+            templateUrl: "/pages/about.html"
         })
         .when("/contact", {
-            templateUrl: "contact.html"
+            templateUrl: "/pages/contact.html"
         })
         .when("/scouting", {
-            templateUrl: "scouting.html"
+            templateUrl: "/pages/scouting.html"
         });
 });
 
