@@ -67,7 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\doubt.jpg" />
     <Content Include="images\Robotics_logo.png" />
+    <Content Include="images\Wrath_logo.jpg" />
     <Content Include="pages\about.html" />
     <Content Include="app\app.js" />
     <Content Include="app\controllers\MainController.js">
