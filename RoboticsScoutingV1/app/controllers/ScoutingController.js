@@ -1,58 +1,35 @@
 ﻿app.controller('scout', function ($scope, $http, $mdDialog) {
-    $scope.venueList = new Array();
-    $scope.status = '  ';
-    $scope.customFullscreen = false;
+    $scope.teamList = new Array();
+    $scope.customFullscreen = true;
     $scope.loadTeams = function () {
         $http.get('https://localhost:44306/api/2018/').
             then(function (response) {
-                console.log(response);
-                $scope.venueList = [];
-                var venues = response.data;
-                for (var i = 0; i < venues.length; i++) {
-                    //temp value
-                    var temp = venues[i];
-                    console.log(temp);
-                    $scope.venueList.push(temp);
+                $scope.teamList = [];
+                var teams = response.data;
+                for (var i = 0; i < teams.length; i++) {
+                    var temp = teams[i];
+                    $scope.teamList.push(temp);
                 }
-                $scope.teamid = response.data;
             });
     }
     $scope.sendNew = function (teamData) {
         $http.post('https://localhost:44306/api/2018/', JSON.stringify(teamData));
-        $scope.loadTeams();
+        $scope.teamList.push(teamData);
     }
 
-    $scope.openFromLeft = function (ev) {
-
-        // Appending dialog to document.body to cover sidenav in docs app
-        var confirm = $mdDialog.prompt()
-            .title('Add a new team')
-            .textContent('Bowser is a common name.')
-            .placeholder('Dog name')
-            .ariaLabel('Dog name')
-            .initialValue('Buddy')
-            .targetEvent(ev)
-            .required(true)
-            .ok('Okay!')
-            .cancel('I\'m a cat person');
-
-        $mdDialog.show(confirm).then(function (result) {
-            $scope.status = 'You decided to name your dog ' + result + '.';
-        }, function () {
-            $scope.status = 'You didn\'t name your dog.';
-        });
-        //$mdDialog.show(
-        //    $mdDialog.alert()
-        //        .clickOutsideToClose(true)
-        //        .title('Opening from the left')
-        //        .textContent('Closing to the right!')
-        //        .ariaLabel('Left to right demo')
-        //        .ok('Nice!')
-        //        // You can specify either sting with query selector
-        //        .openFrom(angular.element(document.querySelector('#left')))
-        //        // or an element
-        //        .closeTo(angular.element(document.querySelector('#right')))
-        //);
+    $scope.openFromLeft = function (id) {
+        $mdDialog.show(
+            $mdDialog.alert()
+                .clickOutsideToClose(true)
+                .title('Opening from the left')
+                .textContent('Closing to the right!')
+                .ariaLabel('Left to right demo')
+                .ok('Nice!')
+                // You can specify either sting with query selector
+                .openFrom(angular.element(document.querySelector('#left')))
+                // or an element
+                .closeTo(angular.element(document.querySelector('#right')))
+        );
     };
 
     $scope.showAdvanced = function (ev) {
@@ -66,10 +43,10 @@
         })
             .then(function (answer) {
                 $scope.sendNew(answer);
-                $scope.status = 'You said the information was "' + answer + '".';
+               // $scope.status = 'You said the information was "' + answer + '".';
                
             }, function () {
-                $scope.status = 'You cancelled the dialog.';
+               // $scope.status = 'You cancelled the dialog.';
             });
     };
 
@@ -85,12 +62,13 @@
         $scope.answer = function () {
             var newTeamValues = {
                 "teamId": document.querySelector('#teamId').value,
-                "scale": document.querySelector('#scale').value,
-                "exchange": document.querySelector('#scale').value,
-                "switch": document.querySelector('#scale').value,
+                "scale": (document.querySelector('#scale').value === "on") ? "true" : "false",
+                "exchange": (document.querySelector('#exchange').value) ? "true" : "false",
+                "switch": (document.querySelector('#switch').value) ? "true" : "false",
+                "comments": document.querySelector('#comment').value,
+                "name": document.querySelector('#name').value
             }
-            console.log(newTeamValues, document.querySelector('#teamId').value);
-             $mdDialog.hide(newTeamValues.teamId);
+             $mdDialog.hide(newTeamValues);
         };
     }
     $scope.loadTeams();

@@ -13,7 +13,7 @@ namespace DataAPI.Controllers
     [Route("api/2018")]
     public class Team2018Controller : Controller
     {
-        private readonly Team2018Context _context;
+        private Team2018Context _context;
 
         public Team2018Controller(Team2018Context context)
         {
@@ -51,7 +51,7 @@ namespace DataAPI.Controllers
 
         //Post: api/2018
         [HttpPost]
-        public async Task<ActionResult<Team2018>> PostTodoItem(Team2018 newTeam)
+        public async Task<ActionResult<Team2018>> PostTeam([FromBody]Team2018 newTeam)
         {
             _context.Teams.Add(newTeam);
             await _context.SaveChangesAsync();

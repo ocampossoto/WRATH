@@ -22,31 +22,33 @@
           </div>
 
           <div layout="column" layout-align="center start" layout-padding flex>
-            
+              <div class="dialog-demo-content" layout="column" layout-align="left center" style="width:100%">
+                  <h1>FRC Power Up 2018 {{status}}</h1>
+                  
 
-              <div class="dialog-demo-content" layout="column" layout-align="center center" style="width:100%">
-                  <h1>Some Scouting things here {{status}}</h1>
-                  <!--<md-button class="md-primary md-raised edgePadding" ng-click="openFromLeft()">
-                      Open From Left - Close To Right
-                  </md-button>-->
-                  <md-button class="md-primary md-raised" ng-click="showAdvanced($event)">
-                      New team
-                  </md-button>
                   <div id="div_VenueList">
-                      <table align="center">
+                      <table class="table table-striped">
                           <tr>
-                              <td>teamId</td>
-                              <td>switch</td>
-                              <td>scale</td>
-                              <td>exchange</td>
-                              <td>comments</td>
+                              <td>
+                              <md-button style="background-color:black;" class="md-primary md-raised" ng-click="showAdvanced($event)">
+                                    New team
+                                </md-button></td>
+                              <td>Team Number</td>
+                              <td>Team Name</td>
+                              <td>Switch</td>
+                              <td>Scale</td>
+                              <td>Exchange</td>
+                              <td>Comments</td>
                           </tr>
-                          <tr ng-repeat="venue in venueList">
-                              <td>{{venue.teamId}}</td>
-                              <td>{{venue.switch}}</td>
-                              <td>{{venue.scale}}</td>
-                              <td>{{venue.exchange}}</td>
-                              <td>{{venue.comments}}</td>
+
+                          <tr ng-repeat="team in teamList">
+                              <td></td>
+                              <td>{{team.teamId}}</td>
+                              <td>{{team.name}}</td>
+                              <td>{{team.switch}}</td>
+                              <td>{{team.scale}}</td>
+                              <td>{{team.exchange}}</td>
+                              <td>{{team.comments}}</td>
                           </tr>
                       </table>
 

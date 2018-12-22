@@ -11,6 +11,7 @@ namespace DataAPI.Models
         [Key]
         public int Id { get; set; }
         public int TeamId { get; set; }
+        public string Name { get; set; }
         public bool Switch { get; set; }
         public bool Scale { get; set; }
         public bool Exchange { get; set; }
