@@ -1,3 +1,62 @@
-﻿<div>
-    <h1>Some Scouting things here</h1>
+﻿<div ng-app="myApp" ng-controller="scout">
+    <!--
+    <p>
+        Team Number: <label>{{teamid}}</label><br>
+    </p>
+    <button mat-raised-button (click)="addColumn()"> Add column </button>
+    <button mat-raised-button (click)="removeColumn()"> Remove column </button>
+    <button mat-raised-button (click)="shuffle()"> Shuffle </button>-->
+
+   
+
+    <div layout="row" ng-cloak style="height: 300px">
+          <style>
+              .edgePadding {
+                padding-left: 25px;
+                padding-right: 25px;
+              }
+
+          </style>
+
+          <div id="left" layout="column" layout-align="center center" class="md-padding">
+          </div>
+
+          <div layout="column" layout-align="center start" layout-padding flex>
+            
+
+              <div class="dialog-demo-content" layout="column" layout-align="center center" style="width:100%">
+                  <h1>Some Scouting things here {{status}}</h1>
+                  <!--<md-button class="md-primary md-raised edgePadding" ng-click="openFromLeft()">
+                      Open From Left - Close To Right
+                  </md-button>-->
+                  <md-button class="md-primary md-raised" ng-click="showAdvanced($event)">
+                      New team
+                  </md-button>
+                  <div id="div_VenueList">
+                      <table align="center">
+                          <tr>
+                              <td>teamId</td>
+                              <td>switch</td>
+                              <td>scale</td>
+                              <td>exchange</td>
+                              <td>comments</td>
+                          </tr>
+                          <tr ng-repeat="venue in venueList">
+                              <td>{{venue.teamId}}</td>
+                              <td>{{venue.switch}}</td>
+                              <td>{{venue.scale}}</td>
+                              <td>{{venue.exchange}}</td>
+                              <td>{{venue.comments}}</td>
+                          </tr>
+                      </table>
+
+                  </div>
+              </div>
+
+          </div>
+
+          <div id="right" layout="column" layout-align="center center" class="md-padding">
+          </div>
+        </div>
+
 </div>

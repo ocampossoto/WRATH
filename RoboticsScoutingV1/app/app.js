@@ -1,4 +1,4 @@
-﻿var app = angular.module('myApp', ["ngRoute"]);
+﻿var app = angular.module('myApp', ["ngRoute", "ngMaterial"]);
 //Allows for routing between diffrent pages without reloading the page. 
 //html files are just divs with what you want on that page. 
 app.config(function ($routeProvider) {
@@ -17,8 +17,8 @@ app.config(function ($routeProvider) {
         });
 });
 
-app.controller('myCtrl', function ($scope) {
-    $scope.firstName = "John";
-    $scope.lastName = "Doe";
-});
+//app.controller('myCtrl', function ($scope) {
+//    $scope.firstName = "John";
+//    $scope.lastName = "Doe";
+//});
 

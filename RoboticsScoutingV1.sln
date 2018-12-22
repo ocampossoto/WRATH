@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboticsScoutingV1", "RoboticsScoutingV1\RoboticsScoutingV1.csproj", "{9997999C-0693-48E8-91D8-2145EA3D6D5A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAPI", "DataAPI\DataAPI.csproj", "{06A9FDEB-9BBA-4B92-BB1D-75EFC1047769}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9997999C-0693-48E8-91D8-2145EA3D6D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9997999C-0693-48E8-91D8-2145EA3D6D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9997999C-0693-48E8-91D8-2145EA3D6D5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06A9FDEB-9BBA-4B92-BB1D-75EFC1047769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06A9FDEB-9BBA-4B92-BB1D-75EFC1047769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06A9FDEB-9BBA-4B92-BB1D-75EFC1047769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06A9FDEB-9BBA-4B92-BB1D-75EFC1047769}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

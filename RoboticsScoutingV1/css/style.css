@@ -5,3 +5,19 @@
     margin: 20px;
     background-color: #FFF2E0;
 }
+
+table {
+    width: 100vh;
+    border-style: double;
+    border-width: thin;
+    border-color: black;
+}
+th {
+    height: 20px;
+    
+}
+tr {
+    border-bottom-style: double;
+    border-bottom-width: thin;
+    border-bottom-color: black;
+}
