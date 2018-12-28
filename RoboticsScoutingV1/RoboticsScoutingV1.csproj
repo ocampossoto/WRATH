@@ -92,6 +92,7 @@
     <Content Include="Content\angular-material.layouts.min.css" />
     <Content Include="Content\angular-material.min.css" />
     <Content Include="images\Robotics_logo.png" />
+    <Content Include="images\Wrath_logo.jpg" />
     <Content Include="pages\about.html" />
     <Content Include="app\app.js" />
     <Content Include="app\controllers\MainController.js">
