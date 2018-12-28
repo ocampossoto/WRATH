@@ -1,4 +1,4 @@
-﻿<div class="slideshow">
+﻿<!--<div class="slideshow">
     <ul class="slideshow-slides">
         <li ng-repeat="slide in slides" ng-class="{ active: $index == activeIndex }">
             <figure>
@@ -12,8 +12,8 @@
             <a ng-click="jumpToSlide($index)">{{ $index + 1 }}</a>
         </li>
     </ul>
-</div>
-<div class="slider">
+</div>-->
+<div class="slideshow">
     <div class="slide" ng-repeat="image in images" ng-show="image.visible">
         <img ng-src="images/{{image.src}}" />
     </div>

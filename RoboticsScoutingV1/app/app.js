@@ -1,4 +1,4 @@
-﻿var app = angular.module('myApp', ["ngRoute", "ngMaterial"]);
+﻿var app = angular.module('myApp', ["ngRoute", "ngMaterial", 'ngAnimate']);
 //Allows for routing between diffrent pages without reloading the page. 
 //html files are just divs with what you want on that page. 
 app.config(function ($routeProvider) {
@@ -27,7 +27,7 @@ app.config(function ($routeProvider) {
 //    $scope.lastName = "Doe";
 //});
 
-/////irvins stuff moved to MainController.js 12/27/2018 0 itterations
+/////irvins stuff moved to MainController.js 12/27/2018 1 itterations
 //app.controller("SlideShowController", function ($scope) {
 //    $scope.slides = [{
 //            imageUrl: "../images/doubt.jpg", //adding image once Oscar chooses them
@@ -60,48 +60,50 @@ app.config(function ($routeProvider) {
 //angular.element(root).ready(function () {
 //    angular.bootstrap(root, ['app']);
 //});
-var sliderApp = angular.module('sliderApp', ['ngAnimate']);
 
-sliderApp.directive('slider', function ($timeout) {
-    return {
-        restrict: 'AE',
-        replace: true,
-        scope: {
-            images: '='
-        },
-        link: function (scope, elem, attrs) {
-            scope.currentIndex = 0; // Initially the index is at the first image
-            //next button
-            scope.next = function () {
-                scope.currentIndex < scope.images.length - 1 ? scope.currentIndex++ : scope.currentIndex = 0;
-            };
-            //previouse button
-            scope.prev = function () {
-                scope.currentIndex > 0 ? scope.currentIndex-- : scope.currentIndex = scope.images.length - 1;
-            };
+//moved to MainController.js 12 / 27 / 2018 0 itterations
+//var sliderApp = angular.module('sliderApp', ['ngAnimate']);
 
-            scope.$watch('currentIndex', function () {
-                scope.images.forEach(function (image) {
-                    image.visible = false; // make every image invisible
-                });
+//sliderApp.directive('slider', function ($timeout) {
+//    return {
+//        restrict: 'AE',
+//        replace: true,
+//        scope: {
+//            images: '='
+//        },
+//        link: function (scope, elem, attrs) {
+//            scope.currentIndex = 0; // Initially the index is at the first image
+//            //next button
+//            scope.next = function () {
+//                scope.currentIndex < scope.images.length - 1 ? scope.currentIndex++ : scope.currentIndex = 0;
+//            };
+//            //previouse button
+//            scope.prev = function () {
+//                scope.currentIndex > 0 ? scope.currentIndex-- : scope.currentIndex = scope.images.length - 1;
+//            };
 
-                scope.images[scope.currentIndex].visible = true; // make the current image visible
-            });
-            //auto turn to next image
-            var timer;
-            var sliderFunc = function () {
-                timer = $timeout(function () {
-                    scope.next();
-                    timer = $timeout(sliderFunc, 8000);
-                }, 8000);
-            };
+//            scope.$watch('currentIndex', function () {
+//                scope.images.forEach(function (image) {
+//                    image.visible = false; // make every image invisible
+//                });
 
-            sliderFunc();
+//                scope.images[scope.currentIndex].visible = true; // make the current image visible
+//            });
+//            //auto turn to next image
+//            var timer;
+//            var sliderFunc = function () {
+//                timer = $timeout(function () {
+//                    scope.next();
+//                    timer = $timeout(sliderFunc, 8000);
+//                }, 8000);
+//            };
 
-            scope.$on('$destroy', function () {
-                $timeout.cancel(timer); // when the scope is getting destroyed, cancel the timer
-            });
-        },
-        templateUrl: '../pages/slideshow.html'
-    };
-});
+//            sliderFunc();
+
+//            scope.$on('$destroy', function () {
+//                $timeout.cancel(timer); // when the scope is getting destroyed, cancel the timer
+//            });
+//        },
+//        templateUrl: '../pages/slideshow.html'
+//    };
+//});
