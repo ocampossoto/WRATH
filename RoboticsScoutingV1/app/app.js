@@ -22,57 +22,48 @@ app.controller('myCtrl', function ($scope) {
     $scope.lastName = "Doe";
 });
 
-app.controller("SlideShowController", function ($scope) {
-    $scope.slides = [{
-            imageUrl: "../images/doubt.jpg", //adding image once Oscar chooses them
-            caption: "caption goes here" //option caption, not sure if we'll use them
-    }, {
-            imageUrl: "../images/Robotics_logo.jpg",
-            caption: "caption goes here"
-        //can always add more later
-    }];
-});
-app.directive("slideShow", function () {
+var sliderApp = angular.module('sliderApp', ['ngAnimate']);
+
+sliderApp.directive('slider', function ($timeout) {
     return {
         restrict: 'AE',
-        transclude: true,
+        replace: true,
         scope: {
-            slides: '='
+            images: '='
         },
-        template: `
-      <div class="slideshow">
-        <ul class="slideshow-slides">
-        <li ng-repeat="slide in slides" ng-class="{ active: $index == activeIndex }">
-          <figure>
-            <img ng-src="{{ slide.imageUrl}}" />
-            <figcaption ng-show="slide.caption">{{ slide.caption }}</figcaption>
-          </figure>
-        </li>
-        </ul>
-        <ul class="slideshow-dots">
-          <li ng-repeat="slide in slides" ng-class="{ active: $index == activeIndex }">
-            <a ng-click="jumpToSlide($index)">{{ $index + 1 }}</a>
-          </li>
-        </ul>
-      </div>
-    `,
-        link: function ($scope, element, attrs) {
-            var timer = null;
-            $scope.activeIndex = 0;
+        link: function (scope, elem, attrs) {
+            scope.currentIndex = 0; // Initially the index is at the first image
 
-            $scope.jumpToSlide = function (index) {
-                $scope.activeIndex = index;
-                restartTimer();
+            scope.next = function () {
+                scope.currentIndex < scope.images.length - 1 ? scope.currentIndex++ : scope.currentIndex = 0;
             };
 
-        }
+            scope.prev = function () {
+                scope.currentIndex > 0 ? scope.currentIndex-- : scope.currentIndex = scope.images.length - 1;
+            };
+
+            scope.$watch('currentIndex', function () {
+                scope.images.forEach(function (image) {
+                    image.visible = false; // make every image invisible
+                });
+
+                scope.images[scope.currentIndex].visible = true; // make the current image visible
+            });
+            //auto turn to next image
+            var timer;
+            var sliderFunc = function () {
+                timer = $timeout(function () {
+                    scope.next();
+                    timer = $timeout(sliderFunc, 6000);
+                }, 6000);
+            };
+
+            sliderFunc();
+
+            scope.$on('$destroy', function () {
+                $timeout.cancel(timer); // when the scope is getting destroyed, cancel the timer
+            });
+        },
+        templateUrl: 'slideshow.html'
     };
-
 });
-
-var root = document.querySelector('#root');
-angular.element(root).ready(function () {
-    angular.bootstrap(root, ['app']);
-});
-
-
