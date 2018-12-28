@@ -70,7 +70,7 @@
     <Content Include="app\controllers\ImageController.js" />
     <Content Include="images\nex_img.png" />
     <Content Include="images\prev_img.png" />
-    <Content Include="slideshow.html" />
+    <Content Include="pages\slideshow.html" />
     <Content Include="images\doubt.jpg" />
     <Content Include="images\Robotics_logo.png" />
     <Content Include="images\Wrath_logo.jpg" />

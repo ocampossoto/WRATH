@@ -33,11 +33,11 @@ sliderApp.directive('slider', function ($timeout) {
         },
         link: function (scope, elem, attrs) {
             scope.currentIndex = 0; // Initially the index is at the first image
-
+            //next button
             scope.next = function () {
                 scope.currentIndex < scope.images.length - 1 ? scope.currentIndex++ : scope.currentIndex = 0;
             };
-
+            //previouse button
             scope.prev = function () {
                 scope.currentIndex > 0 ? scope.currentIndex-- : scope.currentIndex = scope.images.length - 1;
             };
@@ -54,8 +54,8 @@ sliderApp.directive('slider', function ($timeout) {
             var sliderFunc = function () {
                 timer = $timeout(function () {
                     scope.next();
-                    timer = $timeout(sliderFunc, 6000);
-                }, 6000);
+                    timer = $timeout(sliderFunc, 8000);
+                }, 8000);
             };
 
             sliderFunc();
@@ -64,6 +64,6 @@ sliderApp.directive('slider', function ($timeout) {
                 $timeout.cancel(timer); // when the scope is getting destroyed, cancel the timer
             });
         },
-        templateUrl: 'slideshow.html'
+        templateUrl: '../pages/slideshow.html'
     };
 });

@@ -1,4 +1,4 @@
-﻿sliderApp.controller('SliderController', function ($scope) {
+﻿SsliderApp.controller('SliderController', function ($scope) {
     $scope.images = [{
         src: '../images/doubt.jpg',
         title: 'Pic 1'
