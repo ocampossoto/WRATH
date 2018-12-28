@@ -91,6 +91,7 @@
     <Content Include="Content\angular-material.layouts.ie_fixes.css" />
     <Content Include="Content\angular-material.layouts.min.css" />
     <Content Include="Content\angular-material.min.css" />
+    <Content Include="images\doubt.jpg" />
     <Content Include="images\Robotics_logo.png" />
     <Content Include="images\Wrath_logo.jpg" />
     <Content Include="pages\about.html" />
@@ -102,8 +103,10 @@
     <Content Include="pages\home.html" />
     <Content Include="index.html" />
     <Content Include="pages\newTeam.html" />
+    <Content Include="pages\scouting1.html" />
     <Content Include="pages\scouting.html" />
     <Content Include="css\style.css" />
+    <Content Include="pages\slideshow.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
