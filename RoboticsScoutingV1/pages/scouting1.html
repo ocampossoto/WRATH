@@ -1,15 +1,31 @@
-﻿<div ng-app="myApp" ng-controller="scout">
-    <!--
-    <p>
-        Team Number: <label>{{teamid}}</label><br>
-    </p>
-    <button mat-raised-button (click)="addColumn()"> Add column </button>
-    <button mat-raised-button (click)="removeColumn()"> Remove column </button>
-    <button mat-raised-button (click)="shuffle()"> Shuffle </button>-->
-
-   
-
-    <div layout="row" ng-cloak style="height: 300px">
+﻿<div  class="container" ng-app="myApp" ng-controller="scoutApp">
+    <div ng-hide="login" class="col-md-4 col-md-offset-4">
+        <div class="row">
+            <h1>Welcome to team 1847 scouting app</h1>
+            <h2>Please Login</h2>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label>Email : </label>
+                <input type="text" ng-model="email" class="form-control" required />
+                <label>Password:</label>
+                <input type="password" ng-model="password" ng-enter="login_action()" class="form-control" required>
+                <br>
+                <md-button style="background-color:black;" class="md-primary md-raised" ng-click="login_action()">Submit</md-button>
+                <br />
+            </div>
+            <h4>or <a href="#!sign-up">Create An Account</a></h4>
+        </div>
+       
+        
+        
+        
+    </div>
+    <div ng-hide="!login" class="col-md-4 col-md-offset-4">
+        <h2>Welcome {{f_name}} {{l_name}}</h2>
+        <md-button style="background-color:black;" class="md-primary md-raised" ng-click="log_out()">Log Out</md-button>
+    </div>
+        <!--<div layout="row" ng-cloak style="height: 300px">
           <style>
               .edgePadding {
                 padding-left: 25px;
@@ -24,7 +40,7 @@
           <div layout="column" layout-align="center start" layout-padding flex>
               <div class="dialog-demo-content" layout="column" layout-align="left center" style="width:100%">
                   <h1>Scouting APP{{status}}</h1>
-                  
+
 
                   <div id="div_VenueList">
                       <table class="table table-striped">
@@ -59,6 +75,6 @@
 
           <div id="right" layout="column" layout-align="center center" class="md-padding">
           </div>
-        </div>
+        </div>-->
 
-</div>
+    </div>
