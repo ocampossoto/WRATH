@@ -17,8 +17,8 @@ namespace DataAPI.OtherFeatures
         {
             connectionString =
                 "Data Source = scout1847.database.windows.net;" +
-                " Initial Catalog = scouting; User ID = user;" +
-                " Password = *****; Connect Timeout = 30; Encrypt = True;" +
+                " Initial Catalog = scouting; User ID = ocampossoto;" +
+                " Password = Bulldogs1; Connect Timeout = 30; Encrypt = True;" +
                 " TrustServerCertificate = False; ApplicationIntent = ReadWrite;" +
                 " MultiSubnetFailover = False;";
             connection = new SqlConnection(connectionString);

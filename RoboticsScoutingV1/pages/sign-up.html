@@ -1,0 +1,100 @@
+﻿<div class="container col-md-4 col-md-offset-4" ng-app="myApp" ng-controller="signupApp">
+    <div class="row">
+        <h3>Scouting App Sign up</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-xs-5" style="text-align:right;">
+            <label>First Name:</label>
+        </div>
+        <div class="col-md-3 col-xs-6">
+            <input id="f_name" type="text" ng-model="firstName">
+        </div>
+        <div class="col-md-3 col-xs-5" style="text-align:right;">
+            <label>Last Name :</label>
+        </div>
+        <div class="col-md-3 col-xs-6" >
+            <input id="l_name" type="text" ng-model="lastName">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3 col-xs-5" style="text-align:right;">
+            <label>Email:</label>
+        </div>
+        <div class="col-md-3 col-xs-6 ">
+            <input type="text" id="email" ng-model="email">
+        </div>
+        <div class="col-md-3 col-xs-5">
+            <label ng-hide="email_valid">{{email_status}}</label>
+        </div>
+        <div class="col-md-3 col-xs-6">
+            
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3 col-xs-5" style="text-align:right;">
+            <label>Password:</label>
+        </div>
+        <div class="col-md-3 col-xs-6">
+            <input type="password" id="pass1" ng-model="password" value="pass">
+        </div>
+        <div class="col-md-3 col-xs-5" style="text-align:right;">
+            <label>Re-Enter Password:</label>
+        </div>
+        <div class="col-md-3 col-xs-6">
+            <input type="password" id="pass2" ng-change="password_check()" ng-model-options='{ debounce: 500 }' ng-model="password2" value="pass">
+            <label ng-hide="pass_match">{{pass_status}}</label>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3 col-xs-5" style="text-align:right;">
+            <label>Team Number: </label>
+        </div>
+        <div class="col-md-3 col-xs-5">
+            <input type="number" id="team_number" ng-change="team_check()" ng-model-options='{ debounce: 500 }' ng-model="team_number" value="1847" />
+        </div>
+        <div class="col-md-3 col-xs-12">
+            <label style="color:green;" ng-hide="!new_team"> {{team_name}} </label><br />
+        </div>
+        <div class="col-md-3 col-xs-12">
+            <label>
+                Admin Account?:
+            </label>
+            <input id="acc_type" type="checkbox" ng-model="admin" />
+        </div>
+    </div>
+    <div  ng-hide="new_team">
+        <div class="row" >
+            <div class="col-md-12 col-xs-12">
+                <h4>Team isn't in the system please create a new team</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3  col-xs-5" style="text-align:right;">
+                <label>Team Name: </label>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <input id="team_name" type="text" />
+            </div>
+            <div class="col-md-3 col-xs-5" style="text-align:right;">
+                <label>Public?</label>
+            </div>
+            <div class="col-md-3 col-xs-6" style="text-align:left;">
+                <input id="team_privacy" type="checkbox" />
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3 col-md-push-6">
+            <md-button style="background-color:black;" class="md-primary md-raised" href="#!scouting1" ">Cancel</md-button>
+        </div>
+        <div class="col-md-3 col-md-push-6">
+            <md-button style="background-color:black;" class="md-primary md-raised" ng-click="create()">Submit</md-button>
+        </div>
+    </div>
+   
+   
+</div>
