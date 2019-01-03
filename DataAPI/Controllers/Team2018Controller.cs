@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DataAPI.Models;
-using DataAPI.OtherFeatures;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +14,6 @@ namespace DataAPI.Controllers
     public class Team2018Controller : Controller
     {
         private Team2018Context _context;
-        private DBManage db = new DBManage();
 
         public Team2018Controller(Team2018Context context)
         {
@@ -32,10 +30,9 @@ namespace DataAPI.Controllers
 
         // GET: api/2018
         [HttpGet]
-        public ActionResult<IEnumerable<Team2018>> GetTeams()
+        public async Task<ActionResult<IEnumerable<Team2018>>> GetTeams()
         {
-            //return await _context.Teams.ToListAsync();
-            return db.Getteams();
+            return await _context.Teams.ToListAsync();
         }
 
         // GET: api/2018/5

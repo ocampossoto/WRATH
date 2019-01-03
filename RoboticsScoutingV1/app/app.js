@@ -1,4 +1,4 @@
-﻿var app = angular.module('myApp', ["ngRoute", "ngMaterial", 'ngAnimate', 'ngCookies']);
+﻿var app = angular.module('myApp', ["ngRoute", "ngMaterial", 'ngAnimate']);
 //Allows for routing between diffrent pages without reloading the page. 
 //html files are just divs with what you want on that page. 
 app.config(function ($routeProvider) {
@@ -17,13 +17,8 @@ app.config(function ($routeProvider) {
         })
         .when("/scouting", {
             templateUrl: "/pages/scouting.html"
-        })
-        .when("/sign-up", {
-            templateUrl: "/pages/sign-up.html"
         });
 });
-
-
 //comments mean old code that is due for deletion later on
 
 /////this code has two itterations 12/27/2018 /// delete after next update
