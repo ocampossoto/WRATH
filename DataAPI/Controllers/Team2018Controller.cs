@@ -6,6 +6,7 @@ using DataAPI.Models;
 using DataAPI.OtherFeatures;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,10 +16,12 @@ namespace DataAPI.Controllers
     public class Team2018Controller : Controller
     {
         private Team2018Context _context;
-        private DBManage db = new DBManage();
+        private DBManage db;// = new DBManage();
 
-        public Team2018Controller(Team2018Context context)
+
+        public Team2018Controller(Team2018Context context, IConfiguration configuration)
         {
+            db = new DBManage(configuration);
             _context = context;
 
             if (_context.Teams.Count() == 0)

@@ -1,4 +1,5 @@
 ﻿using DataAPI.Models;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,14 +14,15 @@ namespace DataAPI.OtherFeatures
         private readonly string connectionString;
         SqlConnection connection;
 
-        public DBManage()
+        public DBManage(IConfiguration configuration)
         {
-            connectionString =
-                "Data Source = scout1847.database.windows.net;" +
-                " Initial Catalog = scouting; User ID = ocampossoto;" +
-                " Password = Bulldogs1; Connect Timeout = 30; Encrypt = True;" +
-                " TrustServerCertificate = False; ApplicationIntent = ReadWrite;" +
-                " MultiSubnetFailover = False;";
+            connectionString = configuration.GetConnectionString("ConnectionString");
+            //connectionString =
+            //    "Data Source = scout1847.database.windows.net;" +
+            //    " Initial Catalog = scouting; User ID = ocampossoto;" +
+            //    " Password = Bulldogs1; Connect Timeout = 30; Encrypt = True;" +
+            //    " TrustServerCertificate = False; ApplicationIntent = ReadWrite;" +
+            //    " MultiSubnetFailover = False;";
             connection = new SqlConnection(connectionString);
         }
         public void Connect()

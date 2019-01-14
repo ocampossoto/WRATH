@@ -6,6 +6,7 @@ using DataAPI.Models;
 using DataAPI.OtherFeatures;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -15,6 +16,13 @@ namespace DataAPI.Controllers
     [Route("api/ScoutTemplate")]
     public class ScoutTemplateController : Controller
     {
+
+        private DBManagment Database;
+
+        public ScoutTemplateController(IConfiguration configuration)
+        {
+            Database = new DBManagment(configuration);
+        }
 
         //public Team2018Controller(Team2018Context context)
         //{
@@ -54,16 +62,16 @@ namespace DataAPI.Controllers
         [HttpPost]
         public async void PostTeam([FromBody] JObject newItem)
         {
-            DBManage t = new DBManage();
-            t.Connect();
-            //dynamic d = JObject.Parse(newItem);
-            //Task<ActionResult<dynamic>>
-            foreach (var x in newItem)
-            {
-                string name = x.Key;
-                JToken value = x.Value;
-            }
-            //return CreatedAtAction("GetTeam", new { id = newTeam.TeamId }, newTeam);
+            //DBManage t = new DBManage();
+            //t.Connect();
+            ////dynamic d = JObject.Parse(newItem);
+            ////Task<ActionResult<dynamic>>
+            //foreach (var x in newItem)
+            //{
+            //    string name = x.Key;
+            //    JToken value = x.Value;
+            //}
+            ////return CreatedAtAction("GetTeam", new { id = newTeam.TeamId }, newTeam);
         }
     }
 }

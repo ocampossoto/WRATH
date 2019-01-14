@@ -1,11 +1,13 @@
 ﻿using DataAPI.Models;
 using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-using DataAPI.Models;
+using Microsoft.IdentityModel.Protocols;
+using Microsoft.Extensions.Configuration;
 
 namespace DataAPI.OtherFeatures
 {
@@ -14,14 +16,11 @@ namespace DataAPI.OtherFeatures
         private readonly string connectionString;
         SqlConnection connection;
 
-        public DBManagment()
+        public DBManagment(IConfiguration configuration)
         {
-            connectionString =
-                "Data Source = scout1847.database.windows.net;" +
-                " Initial Catalog = scouting; User ID = ocampossoto;" +
-                " Password = Bulldogs1; Connect Timeout = 30; Encrypt = True;" +
-                " TrustServerCertificate = False; ApplicationIntent = ReadWrite;" +
-                " MultiSubnetFailover = False;";
+            
+            connectionString = configuration["ConnectionString"];
+
             connection = new SqlConnection(connectionString);
         }
         public void Connect()

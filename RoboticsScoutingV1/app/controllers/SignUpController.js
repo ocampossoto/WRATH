@@ -55,7 +55,7 @@
             }
             $http.post('https://localhost:44306/api/team/', JSON.stringify(newTeamValues));
         }
-
+        $cookies.putObject
         $cookies.put('f_name', newMemberValues.f_name);
         $cookies.put('l_name', newMemberValues.l_name);
         $location.path('scouting1')

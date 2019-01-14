@@ -6,6 +6,7 @@ using DataAPI.Models;
 using DataAPI.OtherFeatures;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace DataAPI.Controllers
 {
@@ -13,7 +14,12 @@ namespace DataAPI.Controllers
     [ApiController]
     public class MemberController : ControllerBase
     {
-        private DBManagment Database = new DBManagment();
+        private DBManagment Database; 
+
+        public MemberController(IConfiguration configuration)
+        {
+            Database = new DBManagment(configuration);
+        }
 
         [HttpPost]
         public ActionResult<Member> PostMember([FromBody]Member newMember)

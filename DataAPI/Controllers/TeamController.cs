@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using DataAPI.OtherFeatures;
 using DataAPI.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace DataAPI.Controllers
 {
@@ -13,7 +14,12 @@ namespace DataAPI.Controllers
     [ApiController]
     public class TeamController : ControllerBase
     {
-        private DBManagment Database = new DBManagment();
+        private DBManagment Database;
+
+        public TeamController(IConfiguration configuration)
+        {
+            Database = new DBManagment(configuration);
+        }
 
         [HttpPost]
         public ActionResult<Team> PostTeam([FromBody]Team newTeam)
