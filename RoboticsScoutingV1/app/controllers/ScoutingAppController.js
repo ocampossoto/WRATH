@@ -17,6 +17,9 @@
         var url = "https://localhost:44306/api/member/email=" + $scope.email + "&password=" + $scope.password;
         $http.get(url).
             then(function (response) {
+                if (response == null || response == undefined) {
+                    console.log("Not found");
+                }
                 var member = response.data;
                 $cookies.put('f_name', member.f_Name);
                 $cookies.put('l_name', member.l_Name);
