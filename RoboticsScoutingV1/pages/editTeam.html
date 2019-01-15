@@ -1,0 +1,46 @@
+﻿<md-dialog aria-label="Mango (Fruit)">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools" style="background-color:black;">
+                <h2>Edit Team {{team.name}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    X
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <label>Team Number: </label>
+                <input type="number" id="teamId" value="{{team.teamId}}">
+                <br />
+                <label>Team Name: </label>
+                <input type="text" id="name" value="{{team.name}}"/>
+                <br />
+                <label>Scale: </label>
+                <input type="checkbox" id="scale" checked="{{team.scale}}">
+                <label>switch: </label>
+                <input type="checkbox" id="switch" checked="{{team.switch}}">
+                <label>Exchange: </label>
+                <input type="checkbox" id="exchange" checked="{{team.exchange}}">
+                <br />
+                <label>Comments</label>
+                <input type="text" id="comment" value="{{team.comments}}"/>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button syle="background-color:red;" ng-click="delete()">
+                Delete
+            </md-button>
+            <md-button ng-click="cancel()">
+                Cancel
+            </md-button>
+            <md-button ng-click="answer()">
+                Save
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

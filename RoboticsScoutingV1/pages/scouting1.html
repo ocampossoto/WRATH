@@ -1,0 +1,80 @@
+﻿<div  class="container" ng-app="myApp" ng-controller="scoutApp">
+    <div ng-hide="login" class="col-md-4 col-md-offset-4">
+        <div class="row">
+            <h1>Welcome to team 1847 scouting app</h1>
+            <h2>Please Login</h2>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label>Email : </label>
+                <input type="text" ng-model="email" class="form-control" required />
+                <label>Password:</label>
+                <input type="password" ng-model="password" ng-enter="login_action()" class="form-control" required>
+                <br>
+                <md-button style="background-color:black;" class="md-primary md-raised" ng-click="login_action()">Submit</md-button>
+                <br />
+            </div>
+            <h4>or <a href="#!sign-up">Create An Account</a></h4>
+        </div>
+       
+        
+        
+        
+    </div>
+    <div ng-hide="!login" class="col-md-4 col-md-offset-4">
+        <h2>Welcome {{f_name}} {{l_name}} of team {{team}}</h2>
+        <md-button style="background-color:black;" class="md-primary md-raised" ng-click="log_out()">Log Out</md-button>
+    </div>
+        <!--<div layout="row" ng-cloak style="height: 300px">
+          <style>
+              .edgePadding {
+                padding-left: 25px;
+                padding-right: 25px;
+              }
+
+          </style>
+
+          <div id="left" layout="column" layout-align="center center" class="md-padding">
+          </div>
+
+          <div layout="column" layout-align="center start" layout-padding flex>
+              <div class="dialog-demo-content" layout="column" layout-align="left center" style="width:100%">
+                  <h1>Scouting APP{{status}}</h1>
+
+
+                  <div id="div_VenueList">
+                      <table class="table table-striped">
+                          <tr>
+                              <td>
+                              <md-button style="background-color:black;" class="md-primary md-raised" ng-click="showAdvanced($event)">
+                                    New team
+                                </md-button></td>
+                              <td>Team Number</td>
+                              <td>Team Name</td>
+                              <td>Switch</td>
+                              <td>Scale</td>
+                              <td>Exchange</td>
+                              <td>Comments</td>
+                          </tr>
+
+                          <tr ng-repeat="team in teamList">
+                              <td></td>
+                              <td>{{team.teamId}}</td>
+                              <td>{{team.name}}</td>
+                              <td>{{team.switch}}</td>
+                              <td>{{team.scale}}</td>
+                              <td>{{team.exchange}}</td>
+                              <td>{{team.comments}}</td>
+                          </tr>
+                      </table>
+
+                  </div>
+              </div>
+
+          </div>
+
+          <div id="right" layout="column" layout-align="center center" class="md-padding">
+          </div>
+        </div>-->
+
+    </div>

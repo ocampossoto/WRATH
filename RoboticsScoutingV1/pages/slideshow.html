@@ -1,0 +1,28 @@
+﻿<!--<div class="slideshow">
+    <ul class="slideshow-slides">
+        <li ng-repeat="slide in slides" ng-class="{ active: $index == activeIndex }">
+            <figure>
+                <img ng-src="{{ slide.imageUrl}}" />
+                <figcaption ng-show="slide.caption">{{ slide.caption }}</figcaption>
+            </figure>
+        </li>
+    </ul>
+    <ul class="slideshow-dots">
+        <li ng-repeat="slide in slides" ng-class="{ active: $index == activeIndex }">
+            <a ng-click="jumpToSlide($index)">{{ $index + 1 }}</a>
+        </li>
+    </ul>
+</div>-->
+<div class="slideshow">
+    <div class="slide" ng-repeat="image in images" ng-show="image.visible">
+        <img height="320" width="640" ng-src="images/{{image.src}}" />
+    </div>
+    <div class="arrows">
+        <a href="#" ng-click="prev()">
+            <img src="images/prev_img.png" />
+        </a>
+        <a href="#" ng-click="next()">
+            <img src="images/nex_img.png" />
+        </a>
+    </div>Pepperoni, Pork, Beef, Mushrooms, Green Peppers, Red Onions
+</div>

@@ -2,22 +2,39 @@
 <html lang="en-US">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <!-- AngularJS Material Dependencies -->
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/Scripts/angular-animate.min.js"></script>
+    <script src="/Scripts/angular-aria.min.js"></script>
+    <script src="/Scripts/angular-messages.min.js"></script>
+    <script src="/Scripts/angular-route.js"></script>
+    <script src="/Scripts/angular-material.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-cookies.js"></script>
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Next two are BootStrap links adds some good adaptive stuff to the page  -->
+
+    <!-- Next two are BootStrap links adds some good adaptive stuff to the page
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional Bootstrap theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- AngularJS Material CSS now available via Google CDN; version 1.1.9 used here -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.9/angular-material.min.css">
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script src="app/app.js"></script>
-    <script src="app/controlelrs/MainController.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/controllers/MainController.js"></script>
+    <script src="/app/controllers/ScoutingController.js"></script>
+    <script src="/app/controllers/ScoutingAppController.js"></script>
+    <script src="app/controllers/SignUpController.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
 
 
 </head>
 
 <body ng-app="myApp" ng-controller="myCtrl">
+    <div class="teamLogo">
+        <!--<img src="../images/Wrath_logo.jpg" height="200" width="260" />-->
+    </div>
     <!-- Navigation bar -->
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -34,13 +51,15 @@
                     <li><a href="#!/">Home</a></li>
                     <li><a href="#!about">About</a></li>
                     <li><a href="#!contact">Contact</a></li>
-                    <li><a href="#!scouting">Scouting</a></li>
+                    <li><a href="#!scouting">Scouting2018</a></li>
+                    <li><a href="#!scouting1">Scouting</a></li>
+
                 </ul>
             </div>
         </div>
     </div>
     <!--  for the div in your route  -->
-    <div style="text-align:center; min-height:60vh; margin-top:10vh" ng-view></div>
+    <div style="text-align:center; min-height:60vh; margin-top:6vh" ng-view></div>
 
     <!-- Footer for copy rights and what not -->
     <footer style="width:100%; margin-top:5%; position:static; bottom:0;" class="page-footer font-small blue pt-4">
