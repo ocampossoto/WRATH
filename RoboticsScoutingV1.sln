@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboticsScoutingV1", "Robot
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAPI", "DataAPI\DataAPI.csproj", "{06A9FDEB-9BBA-4B92-BB1D-75EFC1047769}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalDB", "LocalDB\LocalDB.csproj", "{4464059A-71DC-43DF-B14F-FD7DE41BE159}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{06A9FDEB-9BBA-4B92-BB1D-75EFC1047769}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06A9FDEB-9BBA-4B92-BB1D-75EFC1047769}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06A9FDEB-9BBA-4B92-BB1D-75EFC1047769}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4464059A-71DC-43DF-B14F-FD7DE41BE159}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4464059A-71DC-43DF-B14F-FD7DE41BE159}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4464059A-71DC-43DF-B14F-FD7DE41BE159}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4464059A-71DC-43DF-B14F-FD7DE41BE159}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

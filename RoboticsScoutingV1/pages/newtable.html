@@ -1,0 +1,36 @@
+﻿<md-dialog>
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools" style="background-color:black;">
+                <h2>Add a New Team</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    X
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-button style="background-color:black;" class="md-primary md-raised" ng-click="addColumn()">Add Column</md-button><br />
+                <label>Table Name (adds "_{{teamNumber}}" to name) </label> 
+                <input type="text" id="tableName" /> 
+                <table >
+                    <tr id="form">
+
+                    </tr>
+                </table>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button style="background-color:black;" class="md-primary md-raised" ng-click="cancel()">
+                Cancel
+            </md-button>
+            <md-button style="background-color:black;" class="md-primary md-raised" ng-click="answer()">
+                Add
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

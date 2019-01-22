@@ -18,6 +18,9 @@ app.config(function ($routeProvider) {
         .when("/scouting", {
             templateUrl: "/pages/scouting.html"
         })
+        .when("/view", {
+            templateUrl: "/pages/viewtable.html"
+        })
         .when("/sign-up", {
             templateUrl: "/pages/sign-up.html"
         });
